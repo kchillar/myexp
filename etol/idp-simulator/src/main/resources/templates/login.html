@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>IDP Simulator - Login</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <body>
+        <p>john.doe@alacriti.com</p>
+        <p>pass1234</p>
+        <span class="error" th:if="${errorMsg}"  th:text="${errorMsg}"></span>        
+        <form action="#" th:action="@{/login}" th:object="${userInfo}" method="post">
+            <p>Login ID: <input type="text" th:field="*{loginId}" /></p>
+            <p>Password: <input type="password" th:field="*{password}"  /></p>
+            <p><input type="reset" value="Reset" /><input type="submit" value="Submit" /></p>
+        </form>
+    </body>
+
+</body>
+</html>
